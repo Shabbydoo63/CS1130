@@ -1,0 +1,152 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title> 
+		User Data Management 
+	</title> 
+	<meta charset="utf-8">
+        <link rel="stylesheet" href="payroll.css">
+</head> 
+<style>
+    table, th, td {
+  border: 1px solid black;}
+</style>
+<body> <h1>PAYROLL</h1> 
+<div id="maindiv">
+<!--give ID for every input through grouping-->
+	<div id="datacontainer"> 
+		<div id="inputbox">
+		<br><br><label for="nameInput">Employee Name:</label> 
+		<input type="text" id="nameInput" placeholder="Enter employee name"> <br><br>
+		<label for="daysInput">Days Worked:</label>
+		<input type="number" id="daysInput" placeholder="Enter days worked"><br><br>
+		<label for="rateInput">Daily Rate:</label>
+		<input type="number" id="rateInput" placeholder="Enter daily rate"><br><br>
+		<label for="deductionInput">Deduction Amount:</label> 
+		<input type="number" id="deductionInput" placeholder="Enter deduction amount">  <br><br>
+
+		<button id="addData">Add</button> </div>
+		
+		<a href="index.html"><button>Home Page</button></a><br><br><br>
+	</div> 
+<div id="tablediv">
+	<table id="outputTable"> 
+		<tr> 
+			<th>Number</th> 
+			<th>Name</th>
+			<th>Days Worked</th> 
+			<th>Daily Rate</th> 
+			<th>Gross Pay</th>
+			<th>Deduction Amount</th> 
+			<th>Net Pay</th> 
+			<th>Action</th> 
+		</tr> 
+	</table> 
+	</div>
+</div>
+	<script> 
+	let numberglobal=1;
+	document.getElementById("addData").addEventListener("click", 
+   ()=>{
+		
+			// Get input values 
+			let name = document.getElementById("nameInput").value; 
+			let days = document.getElementById("daysInput").value*1; 
+			let rate = document.getElementById("rateInput").value*1; 
+			let deduction = document.getElementById("deductionInput").value*1; 
+			let number = numberglobal;
+			let GrossP = days*rate; 
+			let NetP = GrossP - deduction; 
+			numberglobal++;
+
+
+			// Get the table and insert a new row at the end 
+			let table = document.getElementById("outputTable"); 
+			let newRow = table.insertRow(table.rows.length); 
+			
+			// Insert data into cells of the new row 
+			newRow.insertCell(0).innerHTML = number; 
+			newRow.insertCell(1).innerHTML = name; 
+			newRow.insertCell(2).innerHTML = days; 
+			newRow.insertCell(3).innerHTML = GrossP; 
+			newRow.insertCell(4).innerHTML = rate; 
+			newRow.insertCell(5).innerHTML = deduction; 
+			newRow.insertCell(6).innerHTML = NetP; 
+			newRow.insertCell(7).innerHTML = 
+				'<button onclick="editData(this)">Edit</button>'+ 
+				'<button onclick="deleteData(this)">Delete</button>'; 
+			
+			// Clear input fields 
+			clearInputs(); 
+		});
+
+		function editData(button) { 
+			
+			// Get the parent row of the clicked button 
+			let row = button.parentNode.parentNode; 
+			
+			// Get the cells within the row 
+			let numberCell = row.cells[0]; 
+			let nameCell = row.cells[1]; 
+			let daysCell = row.cells[2]; 
+			let rateCell = row.cells[3];
+			let grossCell = row.cells[4]; 
+			let deductionCell = row.cells[5]; 
+			let netCell = row.cells[6]; 
+			
+			
+			// Prompt the user to enter updated values 
+			let numberCell1 = 
+				prompt("Enter the updated number:", 
+				numberCell.innerHTML); 
+			let nameCell1 = 
+				prompt("Enter the updated employee name:", 
+				nameCell.innerHTML); 
+			let daysCell1 = 
+				prompt("Enter the updated work days:", 
+				daysCell.innerHTML 
+				); 
+			let rateCell1 = 
+				prompt("Enter the updated daily rate:", 
+				rateCell.innerHTML 
+				);
+			let grossCell1 = 
+				prompt("Enter the updated gross pay:", 
+				grossCell.innerHTML); 
+			let deductionCell1 = 
+				prompt("Enter the updated deduction:", 
+				deductionCell.innerHTML); 
+			let netCell1 = 
+				prompt("Enter the updated net pay:", 
+				netCell.innerHTML 
+				); 
+			
+			
+			// Update the cell contents with the new values 
+			nameCell.innerHTML = nameInput; 
+			emailCell.innerHTML = emailInput; 
+			mobileCell.innerHTML = numberInput; 
+			addressCell.innerHTML = addressInput; 
+		} 
+		function deleteData(button) { 
+			
+			// Get the parent row of the clicked button 
+			let row = button.parentNode.parentNode; 
+
+			// Remove the row from the table 
+			row.parentNode.removeChild(row); 
+			numberglobal--;
+		} 
+		function clearInputs() { 
+			
+			// Clear input fields 
+			document.getElementById("nameInput").value = ""; 
+			document.getElementById("daysInput").value = ""; 
+			document.getElementById("rateInput").value = ""; 
+			document.getElementById("deductionInput").value = ""; 
+		} 
+	</script> 
+</body> 
+
+</html>

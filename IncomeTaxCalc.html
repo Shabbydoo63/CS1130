@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- //Input the Taxable Income and Compute the income tax using the following table:
+//*Note: Do not use prompts for user inputs. Use the HTML input tag.
+//Income Tax = Basic tax + Rate-->
+<html>
+<body>
+
+<h1>Income Tax Calculator</h1>
+
+<label for="TI">Taxable Income:</label><br>
+  <input type="number" id="TI"><br>
+
+<label for="IncT">Income Tax:</label><br>
+  <input id="IncT" readonly type="number"><br>
+
+<button id = "computetax">Compute</button><br>
+<button id="btnclear2numbers">ClearValues</button><br><br>
+<button onclick="document.location='index.html'">Home Page</button>
+
+<script>
+document.getElementById("btnclear2numbers").addEventListener("click", 
+   ()=>{
+    document.getElementById("TI").value='';
+    document.getElementById("IncT").value='';
+   }
+);
+
+document.getElementById("computetax").addEventListener("click", 
+   ()=>{
+ { var n1, result, temp;
+
+    n1 = document.getElementById("TI").value * 1;
+    
+    if (n1 <= 250000)
+    {
+        result = n1 * 0;
+        document.getElementById("IncT").value = result;
+    }
+    else if (n1 > 250000 && n1 <= 400000)
+    {
+        temp = n1 - 250000;
+        result = temp * 0.2;
+        document.getElementById("IncT").value = result;
+    }
+    else if (n1 > 400000 && n1 <= 800000)
+    {
+        temp = n1 - 400000;
+        result = temp * 0.25 + 30000;
+        document.getElementById("IncT").value = result;
+    }
+    else if (n1 > 800000 && n1 <= 2000000)
+    {
+        temp = n1 - 800000;
+        result = temp * 0.3 + 130000;
+        document.getElementById("IncT").value = result;
+    }
+    else if (n1 > 2000000 && n1 <= 8000000)
+    {
+        temp = n1 - 2000000;
+        result = temp * 0.32 + 490000;
+        document.getElementById("IncT").value = result;
+    }
+    else if (n1 > 8000000)
+    {
+        temp = n1 - 8000000;
+        result = temp * 0.35 + 2410000;
+        document.getElementById("IncT").value = result;
+    }}
+ });
+
+
+</script>
+</body>
+</html>

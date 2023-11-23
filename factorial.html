@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Factorial</h1>
+<p>My first paragraph.</p>
+
+<label for="tofact">Enter number:</label><br>
+  <input type="number" id="tofact"><br>
+<label for="fact">Factorial:</label><br>
+  <input readonly type="number" id="fact"><br>
+
+<button id="factorial">Compute Factorial</button><br><br>
+<button id="btnclear2numbers1">Clear Values</button><br>
+
+<label for="toadd">Enter number:</label><br>
+  <input type="number" id="toadd"><br>
+<label for="sum">Sum:</label><br>
+  <input readonly type="number" id="sum"><br>
+<label for="average">Average:</label><br>
+  <input readonly type="number" id="average"><br>
+
+<button id="sum1">Compute Sum and Average</button><br>
+<button id="btnclear2numbers2">Clear Values</button><br><br>
+
+<button onclick="document.location='index.html'">Home Page</button>
+
+<script>
+document.getElementById("btnclear2numbers1").addEventListener("click", 
+   ()=>{
+    document.getElementById("tofact").value='';
+    document.getElementById("fact").value='';
+   }
+);
+document.getElementById("btnclear2numbers2").addEventListener("click", 
+   ()=>{
+    document.getElementById("toadd").value='';
+    document.getElementById("sum").value='';
+    document.getElementById("average").value='';
+   }
+);
+
+document.getElementById("factorial").addEventListener("click", 
+   ()=>{
+var tofactor,out,mult;
+tofactor = document.getElementById("tofact").value * 1;
+i = 1;
+mult = 1;
+    while( i <= tofactor)
+    {
+        mult*=i;
+        i++;
+    }
+    document.getElementById("fact").value = mult;
+});
+
+//Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers
+
+document.getElementById("sum1").addEventListener("click", 
+   ()=>{
+var left,add,sum1,result,sum2;
+add = 1;
+sum1 = 0;
+sum2 = 0;
+i = document.getElementById("toadd").value;
+    do{
+        sum1 += add;
+        add += 1;
+    }while(add<=i)
+    document.getElementById("sum").value = sum1;
+
+   for (add = 1; add <= i; ++add)
+   {
+        sum2 += add;
+   }
+   result = sum2/i;
+   document.getElementById("average").value = result;
+
+
+});
+
+</script>
+</body>
+</html>

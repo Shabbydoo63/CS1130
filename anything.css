@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap');
+
+
+
+h1 {
+    position: relative; 
+	top: 100px;
+    text-align: center;
+    font-family: 'Smooch Sans', sans-serif;
+    font-size: 6vh;
+    font-style: italic;
+    font-weight: bolder;
+    color: #fefdfd;
+    border-bottom: 1px solid #b1aebb;
+    border-top: 1px solid #b1aebb;
+    transition: all 0.7s ease; 
+
+}
+
+h4 {
+    position: relative; 
+	top: 100px;
+    text-align: center;
+    font-family: 'Smooch Sans', sans-serif;
+    font-size: 1.8vh;
+    font-style: italic;
+    font-weight: bolder;
+    color: #fefdfd;
+    transition: all 0.7s ease; 
+
+}
+
+body {
+    height: 90vh;
+    width: 100%;
+    background: linear-gradient(45deg,#3a3153,#5f43b2,#7f5af0,#fefdfd);
+    background-size: 300% 300%;
+    animation: color 10s ease-in-out infinite;
+}
+
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+
+        background-position: 100% 50%;
+    }
+    10%{
+
+        background-position: 0 50%;
+    }
+}
+
+.menubtns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button{
+    position: relative; 
+    margin-bottom: 0.5px;
+	top: 60px;
+    padding: 1vh;
+    border-color: #fefdfd;
+    background-color: #5f43b2;
+    border-radius: 15px;
+    color: #fefdfd;
+    font-family: 'Smooch Sans', sans-serif;
+    font-size: 2.8vh;
+    font-style: normal;
+    font-weight: bolder;
+    transition: all 0.7s ease; 
+
+}
+
+button:hover {
+    background-color:#7d58eb;
+
+}
+button:focus {
+    outline-color: transparent;
+    outline-style: solid;
+    box-shadow: 0 0 0 4px orchid;
+    transition: 0.7s;
+}
+h4:hover {
+    color:#af95ff;
+    transition: 0.7s;
+}
+
+h1:hover {
+    font-size: 6.4vh;
+    transition: 0.7s;
+}
