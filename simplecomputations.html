@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Feet to Meter</h1>
+
+<label for="ft">Feet:</label><br>
+  <input type="number" id="ft"><br>
+
+
+<button id="btnclear2numbers">Clear Values</button><br>
+
+<label for="mtr">Meters:</label><br>
+  <input id="mtr" readonly type = "number"><br><br>
+  <a href="index.html">Go to homepage</a><br>
+
+<script>
+document.getElementById("btnclear2numbers").addEventListener("click", 
+   ()=>{
+    document.getElementById("mtr").value='';
+    document.getElementById("ft").value='';
+   }
+);
+document.getElementById("ft").addEventListener("keyup", 
+   ()=>{
+      convertftm();
+      }
+      );
+
+function convertftm()
+{
+  var ft, mtr;
+
+    ft = document.getElementById("ft").value * 1;
+    mtr = ft * 0.3048; 
+    document.getElementById("mtr").value = mtr;
+}
+
+</script>
+
+<h1>Meters to Feet</h1>
+<p>My Converter:</p>
+
+<label for="mtr">Meters:</label><br>
+  <input type="number" id="mtr"><br>
+
+<button id="btnclear2numbers">Clear Values</button><br>
+
+<label for="ft">Feet:</label><br>
+  <input id="ft" readonly type = "number"><br><br>
+  <a href="index.html">Go to homepage</a><br>
+
+<script>
+document.getElementById("btnclear2numbers").addEventListener("click", 
+   ()=>{
+    document.getElementById("mtr").value='';
+    document.getElementById("ft").value='';
+   }
+);
+document.getElementById("mtr").addEventListener("keyup", 
+   ()=>{
+      convertmtf();
+      }
+      );
+
+function convertmtf()
+{
+  var ft, mtr;
+
+    mtr = document.getElementById("mtr").value * 1;
+    ft = mtr * 3.28084; 
+    document.getElementById("ft").value = ft;
+}
+</script>
+</body>
+</html>
