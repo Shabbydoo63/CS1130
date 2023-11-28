@@ -1,21 +1,88 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<h1>Feet to Meter</h1>
+<!-------------------------->
+<h1>Feet to Meters</h1>
 
 <label for="ft">Feet:</label><br>
   <input type="number" id="ft"><br>
 
-
-<button id="btnclear2numbers">Clear Values</button><br>
+<button id="btnclear2numbers1">Clear Values</button><br>
 
 <label for="mtr">Meters:</label><br>
   <input id="mtr" readonly type = "number"><br><br>
-  <a href="index.html">Go to homepage</a><br>
 
+
+<!-------------------------->
+
+<h1>Meters to Feet</h1>
+<p>My Converter:</p>
+
+<label for="mtrs">Meters:</label><br>
+  <input type="number" id="mtrs"><br>
+
+<button id="btnclear2numbers2">Clear Values</button><br>
+
+<label for="fts">Feet:</label><br>
+  <input id="fts" readonly type = "number"><br><br>
+
+
+<!-------------------------->
+
+<h1>Fahrenheit to Celsius</h1>
+
+<label for="fahr">Fahrenheit:</label><br>
+  <input type="number" id="fahr"><br>
+
+
+<button id="btnclear2numbers3">Clear Values</button><br>
+
+<label for="celc">Celsius:</label><br>
+  <input id="celc" readonly type = "number"><br><br>
+
+<!-------------------------->
+
+<h1>Celsius to Fahrenheit</h1>
+
+<label for="celcs">Celsius:</label><br>
+  <input type="number" id="celcs"><br>
+
+
+<button id="btnclear2numbers4">Clear Values</button><br>
+
+<label for="fahrs">Fahrenheit:</label><br>
+  <input id="fahrs" readonly type = "number"><br><br>
+  <a href="index.html"><button>Home Page</button></a><br>
+
+
+<!-------------------------->
 <script>
-document.getElementById("btnclear2numbers").addEventListener("click", 
+//fahr to celc
+    document.getElementById("btnclear2numbers3").addEventListener("click", 
+   ()=>{
+    document.getElementById("fahr").value='';
+    document.getElementById("celc").value='';
+   }
+);
+document.getElementById("fahr").addEventListener("keyup", 
+   ()=>{
+    convertftc();
+      }
+      );
+
+function convertftc()
+{
+  var ft, mtr, temp, temp2, temp3;
+
+    ft = document.getElementById("fahr").value * 1;
+    temp = ft - 32; 
+    temp2 = 5/9;
+    temp3 = temp * temp2;
+    document.getElementById("celc").value = temp3;
+}
+
+//Feet to meters
+document.getElementById("btnclear2numbers1").addEventListener("click", 
    ()=>{
     document.getElementById("mtr").value='';
     document.getElementById("ft").value='';
@@ -36,28 +103,16 @@ function convertftm()
     document.getElementById("mtr").value = mtr;
 }
 
-</script>
 
-<h1>Meters to Feet</h1>
-<p>My Converter:</p>
 
-<label for="mtr">Meters:</label><br>
-  <input type="number" id="mtr"><br>
-
-<button id="btnclear2numbers">Clear Values</button><br>
-
-<label for="ft">Feet:</label><br>
-  <input id="ft" readonly type = "number"><br><br>
-  <a href="index.html">Go to homepage</a><br>
-
-<script>
-document.getElementById("btnclear2numbers").addEventListener("click", 
+//meterstofeet
+document.getElementById("btnclear2numbers2").addEventListener("click", 
    ()=>{
-    document.getElementById("mtr").value='';
-    document.getElementById("ft").value='';
+    document.getElementById("mtrs").value='';
+    document.getElementById("fts").value='';
    }
 );
-document.getElementById("mtr").addEventListener("keyup", 
+document.getElementById("mtrs").addEventListener("keyup", 
    ()=>{
       convertmtf();
       }
@@ -67,10 +122,35 @@ function convertmtf()
 {
   var ft, mtr;
 
-    mtr = document.getElementById("mtr").value * 1;
+    mtr = document.getElementById("mtrs").value * 1;
     ft = mtr * 3.28084; 
-    document.getElementById("ft").value = ft;
+    document.getElementById("fts").value = ft;
 }
+
+//Celcius To Fahr
+document.getElementById("btnclear2numbers4").addEventListener("click", 
+   ()=>{
+    document.getElementById("celcs").value='';
+    document.getElementById("fahrs").value='';
+   }
+);
+document.getElementById("celcs").addEventListener("keyup", 
+   ()=>{
+    convertctf();
+      }
+      );
+
+function convertctf()
+{
+  var ft, mtr, temp, temp2, temp3;
+
+    ft = document.getElementById("celcs").value * 1;
+    temp = ft * 9/5; 
+    temp2 = temp + 32;
+    document.getElementById("fahrs").value = temp2;
+}
+
 </script>
+
 </body>
 </html>
