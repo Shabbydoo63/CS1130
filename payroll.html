@@ -8,42 +8,39 @@
 	<meta charset="utf-8">
         <link rel="stylesheet" href="payroll.css">
 </head> 
-<style>
-    table, th, td {
-  border: 1px solid black;}
-</style>
+
 <body> <h1>PAYROLL</h1> 
 <div id="maindiv">
-<!--give ID for every input through grouping-->
-	<div id="datacontainer"> 
 		<div id="inputbox">
-		<br><br><label for="nameInput">Employee Name:</label> 
-		<input type="text" id="nameInput" placeholder="Enter employee name"> <br><br>
-		<label for="daysInput">Days Worked:</label>
-		<input type="number" id="daysInput" placeholder="Enter days worked"><br><br>
-		<label for="rateInput">Daily Rate:</label>
-		<input type="number" id="rateInput" placeholder="Enter daily rate"><br><br>
-		<label for="deductionInput">Deduction Amount:</label> 
-		<input type="number" id="deductionInput" placeholder="Enter deduction amount">  <br><br>
+			<br><br><label for="nameInput">Employee Name:</label> 
+			<input type="text" id="nameInput" placeholder="Enter employee name"> <br><br>
+			<label for="daysInput">Days Worked:</label>
+			<input type="number" id="daysInput" placeholder="Enter days worked"><br><br>
+			<label for="rateInput">Daily Rate:</label>
+			<input type="number" id="rateInput" placeholder="Enter daily rate"><br><br>
+			<label for="deductionInput">Deduction Amount:</label> 
+			<input type="number" id="deductionInput" placeholder="Enter deduction amount">  <br><br>
+		</div>
 
-		<button id="addData">Add</button> </div>
-		
-		<a href="index.html"><button>Home Page</button></a><br><br><br>
-	</div> 
-<div id="tablediv">
-	<table id="outputTable"> 
-		<tr> 
-			<th>Number</th> 
-			<th>Name</th>
-			<th>Days Worked</th> 
-			<th>Daily Rate</th> 
-			<th>Gross Pay</th>
-			<th>Deduction Amount</th> 
-			<th>Net Pay</th> 
-			<th>Action</th> 
-		</tr> 
-	</table> 
-	</div>
+		<div id="buttonbox">
+			<button id="addData">Add</button> 
+			<a href="index.html"><button>Home Page</button></a><br><br><br>
+		</div>	
+
+		<div id="tablediv">
+			<table id="outputTable"> 
+				<tr> 
+					<th>Number</th> 
+					<th>Name</th>
+					<th>Days Worked</th> 
+					<th>Daily Rate</th> 
+					<th>Gross Pay</th>
+					<th>Deduction Amount</th> 
+					<th>Net Pay</th> 
+					<th>Action</th> 
+				</tr> 
+			</table> 
+		</div>
 </div>
 	<script> 
 	let numberglobal=1;

@@ -2,21 +2,42 @@
 <!-- //Input the Taxable Income and Compute the income tax using the following table:
 //*Note: Do not use prompts for user inputs. Use the HTML input tag.
 //Income Tax = Basic tax + Rate-->
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="income.css">
 <html>
 <body>
+<!---------------------------------------------->
+<div id="maindiv1">
+<!---------------------------------------------->
 
 <h1>Income Tax Calculator</h1>
+<!---------------------------------------------->
+<div id="inputsf">
+<!---------------------------------------------->
 
-<label for="TI">Taxable Income:</label><br>
-  <input type="number" id="TI"><br>
+    <label for="TI">Taxable Income:</label><br>
+        <input type="number" id="TI"><br>
 
-<label for="IncT">Income Tax:</label><br>
-  <input id="IncT" readonly type="number"><br>
+    <label for="IncT">Income Tax:</label><br>
+        <input id="IncT" readonly type="number"><br>
+<!---------------------------------------------->
+    </div>
+<!---------------------------------------------->
+
+<!---------------------------------------------->
+<div id="menubtns">
+<!---------------------------------------------->
 
 <button id = "computetax">Compute</button><br>
-<button id="btnclear2numbers">ClearValues</button><br><br>
+<button id="btnclear2numbers">ClearValues</button><br>
 <button onclick="document.location='index.html'">Home Page</button>
 
+<!---------------------------------------------->
+</div>
+<!---------------------------------------------->
+</div>
+<!---------------------------------------------->
 <script>
 document.getElementById("btnclear2numbers").addEventListener("click", 
    ()=>{
