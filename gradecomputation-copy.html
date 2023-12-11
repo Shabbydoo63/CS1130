@@ -2,7 +2,7 @@
 <html>
 <title>GRADE COMPUTATION</title>
 <meta charset="utf-8">
-        <link rel="stylesheet" href="payroll.css">
+        <link rel="stylesheet" href="simplecomputations.css">
 <body>
 <div id="maindiv">
 		<h1> Grade Computation</h1>
@@ -57,7 +57,7 @@ base = document.getElementById("base").value*1;
 grade= base + (score/items)*(100-base);
 document.getElementById("grade").value = grade.toFixed(0);
 
-if (grade>=91 && grade<=100)lettergrade = 'A';
+if (grade>=91 && grade>=100)lettergrade = 'A';
 else if (grade<91 && grade>=87)lettergrade = 'B+';
 else if (grade<97 && grade>=83)lettergrade = 'B';
 else if (grade<83 && grade>=79)lettergrade= 'C+';

@@ -2,7 +2,7 @@
 <html>
 <body>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="payroll.css">
+  <link rel="stylesheet" href="simplecomputations.css">
 
 
         <h1>Factorial</h1>
@@ -27,7 +27,7 @@
               <button id="sum1">Compute Sum and Average</button><br><br>
               <button id="btnclear2numbers2">Clear Values</button><br><br>
 
-              <button onclick="document.location='index.html'">Home Page</button>
+              <a href="index.html"><button>Home Page</button></a><br>
         </div>  
 </div>
 <script>
@@ -56,7 +56,7 @@ mult = 1;
         mult*=i;
         i++;
     }
-    document.getElementById("fact").value = mult;
+    document.getElementById("fact").value = mult.toFixed(0);
 });
 
 //Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers
@@ -72,14 +72,14 @@ i = document.getElementById("toadd").value;
         sum1 += add;
         add += 1;
     }while(add<=i)
-    document.getElementById("sum").value = sum1;
+    document.getElementById("sum").value = sum1.toFixed(0);
 
    for (add = 1; add <= i; ++add)
    {
         sum2 += add;
    }
    result = sum2/i;
-   document.getElementById("average").value = result;
+   document.getElementById("average").value = result.toFixed(0);
 
 
 });

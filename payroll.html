@@ -96,7 +96,6 @@
 			let row = button.parentNode.parentNode; 
 			
 			// Get the cells within the row 
-			let numberCell = row.cells[0]; 
 			let nameCell = row.cells[1]; 
 			let daysCell = row.cells[2]; 
 			let rateCell = row.cells[3];
@@ -106,9 +105,6 @@
 			
 			
 			// Prompt the user to enter updated values 
-			let numberCell1 = 
-				prompt("Enter the updated number:", 
-				numberCell.innerHTML); 
 			let nameCell1 = 
 				prompt("Enter the updated employee name:", 
 				nameCell.innerHTML); 
@@ -120,23 +116,17 @@
 				prompt("Enter the updated daily rate:", 
 				rateCell.innerHTML 
 				);
-			let grossCell1 = 
-				prompt("Enter the updated gross pay:", 
-				grossCell.innerHTML); 
 			let deductionCell1 = 
 				prompt("Enter the updated deduction:", 
 				deductionCell.innerHTML); 
-			let netCell1 = 
-				prompt("Enter the updated net pay:", 
-				netCell.innerHTML 
-				); 
+			
 			
 			
 			// Update the cell contents with the new values 
-			nameCell.innerHTML = nameInput; 
-			emailCell.innerHTML = emailInput; 
-			mobileCell.innerHTML = numberInput; 
-			addressCell.innerHTML = addressInput; 
+			nameCell.innerHTML = nameCell1; 
+			daysCell.innerHTML = daysCell1; 
+			rateCell.innerHTML = rateCell1; 
+			deductionCell.innerHTML = deductionCell1;
 		} 
 
 		function countRows() {

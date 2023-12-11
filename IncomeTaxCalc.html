@@ -31,7 +31,7 @@
 
 <button id = "computetax">Compute</button><br>
 <button id="btnclear2numbers">ClearValues</button><br>
-<button onclick="document.location='index.html'">Home Page</button>
+<a href="index.html"><button>Home Page</button></a><br>
 
 <!---------------------------------------------->
 </div>
@@ -55,37 +55,37 @@ document.getElementById("computetax").addEventListener("click",
     if (n1 <= 250000)
     {
         result = n1 * 0;
-        document.getElementById("IncT").value = result;
+        document.getElementById("IncT").value = result.toFixed(2);
     }
     else if (n1 > 250000 && n1 <= 400000)
     {
         temp = n1 - 250000;
         result = temp * 0.2;
-        document.getElementById("IncT").value = result;
+        document.getElementById("IncT").value = result.toFixed(2);
     }
     else if (n1 > 400000 && n1 <= 800000)
     {
         temp = n1 - 400000;
         result = temp * 0.25 + 30000;
-        document.getElementById("IncT").value = result;
+        document.getElementById("IncT").value = result.toFixed(2);
     }
     else if (n1 > 800000 && n1 <= 2000000)
     {
         temp = n1 - 800000;
         result = temp * 0.3 + 130000;
-        document.getElementById("IncT").value = result;
+        document.getElementById("IncT").value = result.toFixed(2);
     }
     else if (n1 > 2000000 && n1 <= 8000000)
     {
         temp = n1 - 2000000;
         result = temp * 0.32 + 490000;
-        document.getElementById("IncT").value = result;
+        document.getElementById("IncT").value = result.toFixed(2);
     }
     else if (n1 > 8000000)
     {
         temp = n1 - 8000000;
         result = temp * 0.35 + 2410000;
-        document.getElementById("IncT").value = result;
+        document.getElementById("IncT").value = result.toFixed(2);
     }}
  });
 

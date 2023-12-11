@@ -3,7 +3,7 @@
 <body>
 <!-------------------------->
 <meta charset="utf-8">
-        <link rel="stylesheet" href="payroll.css">
+        <link rel="stylesheet" href="simplecomputations.css">
 <h1>Feet to Meters</h1>
 
 <div id="ipacenterdiv">
@@ -88,7 +88,7 @@ function convertftc()
     temp = ft - 32; 
     temp2 = 5/9;
     temp3 = temp * temp2;
-    document.getElementById("celc").value = temp3;
+    document.getElementById("celc").value = temp3.toFixed(0);
 }
 
 //Feet to meters
@@ -110,7 +110,7 @@ function convertftm()
 
     ft = document.getElementById("ft").value * 1;
     mtr = ft * 0.3048; 
-    document.getElementById("mtr").value = mtr;
+    document.getElementById("mtr").value = mtr.toFixed(0);
 }
 
 
@@ -134,7 +134,7 @@ function convertmtf()
 
     mtr = document.getElementById("mtrs").value * 1;
     ft = mtr * 3.28084; 
-    document.getElementById("fts").value = ft;
+    document.getElementById("fts").value = ft.toFixed(0);
 }
 
 //Celcius To Fahr
@@ -157,7 +157,7 @@ function convertctf()
     ft = document.getElementById("celcs").value * 1;
     temp = ft * 9/5; 
     temp2 = temp + 32;
-    document.getElementById("fahrs").value = temp2;
+    document.getElementById("fahrs").value = temp2.toFixed(0);
 }
 
 </script>
