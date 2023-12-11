@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>Add2Numbers</title>
 <meta charset="utf-8">
         <link rel="stylesheet" href="add2numbers.css">
 </head>
 <body>
+<div id="maindiv">
 
-<h1>Add 2 Numbers</h1>
+   <div id="headerdiv">
+      <h1>Add 2 Numbers</h1>
+   </div>   
+            <div id = "inandoutbox">
+                  <div id="inputbox">
+                        <label for="n1">First number:</label>
+                        <input type="number" id="n1"><br><br>
+                        <label for="n2">Second number:</label>
+                        <input type="number" id="n2" ><br><br>
+                  </div>
+                  
+                  <div id="outputbox">
+                     <label for="sum">Sum:</label>
+                     <input id="sum" readonly type = "number"><br><br>
+               </div>
 
-<div id="inputsdiv">
- <label for="n1">First number:</label><br>
-  <input type="number" id="n1"><br>
- <label for="n2">Second number:</label><br>
-  <input type="number" id="n2"><br>
+                  <div id="buttonbox">
+                        <button id="btnclear2numbers">ClearValues</button><br>
+                        <a href="index.html"><button>Go to homepage</button></a><br>
+                  </div>
+
+               
+            </div>
 </div>
-
-  <button id="btnclear2numbers">ClearValues</button><br>
-
-  <label for="sum">Sum:</label><br>
-  <input id="sum" readonly type = "number"><br><br>
-  <a href="index.html"><button>Go to homepage</button></a><br>
 
 <script>
 
@@ -49,12 +60,12 @@ document.getElementById("n2").addEventListener("keyup",
 
 
  function add2numbers()
- { var n1, n2, sum;
+ { var n1, n12, n2, n22, sum;
 
     n1 = document.getElementById("n1").value * 1;
     n2 = document.getElementById("n2").value * 1;
     sum = n1 + n2; 
-    document.getElementById("sum").value = sum;
+    document.getElementById("sum").value = sum.toFixed(0);
  }
 
  function clear2numbers()

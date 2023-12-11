@@ -2,58 +2,68 @@
 <html>
 <body>
 <!-------------------------->
+<meta charset="utf-8">
+        <link rel="stylesheet" href="payroll.css">
 <h1>Feet to Meters</h1>
 
-<label for="ft">Feet:</label><br>
-  <input type="number" id="ft"><br>
+<div id="ipacenterdiv">
+    <label for="ft" class="labelleft">Feet:</label> 
+      <input type="number" id="ft"><br>
 
-<button id="btnclear2numbers1">Clear Values</button><br>
 
-<label for="mtr">Meters:</label><br>
-  <input id="mtr" readonly type = "number"><br><br>
+    <label for="mtr" class="labelleft">Meters:</label> 
+      <input id="mtr" readonly type = "number"><br><br>
+      <button id="btnclear2numbers1">Clear Values</button><br>
 
+</div>
 
 <!-------------------------->
 
 <h1>Meters to Feet</h1>
-<p>My Converter:</p>
+<div id="ipacenterdiv">
+    <label for="mtrs" class="labelleft">Meters:</label> 
+      <input type="number" id="mtrs"><br>
 
-<label for="mtrs">Meters:</label><br>
-  <input type="number" id="mtrs"><br>
 
-<button id="btnclear2numbers2">Clear Values</button><br>
+    <label for="fts" class="labelleft">Feet:</label> 
+      <input id="fts" readonly type = "number"><br><br>
+      <button id="btnclear2numbers2">Clear Values</button><br>
 
-<label for="fts">Feet:</label><br>
-  <input id="fts" readonly type = "number"><br><br>
-
+</div>
 
 <!-------------------------->
 
 <h1>Fahrenheit to Celsius</h1>
 
-<label for="fahr">Fahrenheit:</label><br>
-  <input type="number" id="fahr"><br>
+      <div id="ipacenterdiv">
+      <label for="fahr" class="labelleft">Fahrenheit:</label> 
+        <input type="number" id="fahr"><br>
 
 
-<button id="btnclear2numbers3">Clear Values</button><br>
 
-<label for="celc">Celsius:</label><br>
-  <input id="celc" readonly type = "number"><br><br>
+      <label for="celc" class="labelleft">Celsius:</label> 
+        <input id="celc" readonly type = "number"><br><br>
+        <button id="btnclear2numbers3">Clear Values</button><br>
 
+</div>
 <!-------------------------->
 
 <h1>Celsius to Fahrenheit</h1>
 
-<label for="celcs">Celsius:</label><br>
-  <input type="number" id="celcs"><br>
+<div id="ipacenterdiv">
+      <label for="celcs" class="labelleft">Celsius:</label> 
+        <input type="number" id="celcs"><br>
 
 
-<button id="btnclear2numbers4">Clear Values</button><br>
 
-<label for="fahrs">Fahrenheit:</label><br>
+
+
+<label for="fahrs" class="labelleft">Fahrenheit:</label> 
   <input id="fahrs" readonly type = "number"><br><br>
-  <a href="index.html"><button>Home Page</button></a><br>
+  <button id="btnclear2numbers4">Clear Values</button><br><br>
 
+  <a href="index.html"><button>Home Page</button></a><br>
+</div>
 
 <!-------------------------->
 <script>

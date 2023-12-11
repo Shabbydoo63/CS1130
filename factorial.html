@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html>
 <body>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="payroll.css">
 
-<h1>Factorial</h1>
-<p>My first paragraph.</p>
 
-<label for="tofact">Enter number:</label><br>
-  <input type="number" id="tofact"><br>
-<label for="fact">Factorial:</label><br>
-  <input readonly type="number" id="fact"><br>
+        <h1>Factorial</h1>
+        <div id="maindiv">
+        <div id="factorialdiv">
+            <label for="tofact" class="labelleft">Enter number:</label>
+            <input type="number" id="tofact" ><br><br>
+            <label for="fact" class="labelleft">Factorial:</label>
+            <input readonly type="number" id="fact"><br><br>
+            <button id="factorial">Compute Factorial</button><br><br>
+            <button id="btnclear2numbers1">Clear Values</button><br>
+        </div>
+        
+        <div id="averagesumdiv">
+              <label for="toadd" class="labelleft">Enter number:</label>
+              <input type="number" id="toadd"><br><br>
+              <label for="sum" class="labelleft">Sum:</label>
+              <input readonly type="number" id="sum"><br><br>
+              <label for="average" class="labelleft">Average:</label>
+              <input readonly type="number" id="average"><br><br>
 
-<button id="factorial">Compute Factorial</button><br><br>
-<button id="btnclear2numbers1">Clear Values</button><br>
+              <button id="sum1">Compute Sum and Average</button><br><br>
+              <button id="btnclear2numbers2">Clear Values</button><br><br>
 
-<label for="toadd">Enter number:</label><br>
-  <input type="number" id="toadd"><br>
-<label for="sum">Sum:</label><br>
-  <input readonly type="number" id="sum"><br>
-<label for="average">Average:</label><br>
-  <input readonly type="number" id="average"><br>
-
-<button id="sum1">Compute Sum and Average</button><br>
-<button id="btnclear2numbers2">Clear Values</button><br><br>
-
-<button onclick="document.location='index.html'">Home Page</button>
-
+              <button onclick="document.location='index.html'">Home Page</button>
+        </div>  
+</div>
 <script>
 document.getElementById("btnclear2numbers1").addEventListener("click", 
    ()=>{

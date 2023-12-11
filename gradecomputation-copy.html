@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html>
 <title>GRADE COMPUTATION</title>
+<meta charset="utf-8">
+        <link rel="stylesheet" href="payroll.css">
 <body>
-<h1>This page computes grade from a raw test score</h1>
-<br><br>
-<label for="score">Score:</label>
-<input id="score" type = "number"><br>
-<label for="items">Items:</label>
-<input id="items" type = "number"><br>
-<label for="base">Base:</label>
-<input id="base" type = "base"><br><br>
+<div id="maindiv">
+		<h1> Grade Computation</h1>
+		<br><br>
+		<div id="inputgcomp">
+				<label for="score" class="labelleft">Score:</label>
+				<input id="score" type = "number"><br>
+				<label for="items" class="labelleft">Items:</label>
+				<input id="items" type = "number"><br>
+				<label for="base" class="labelleft">Base:</label>
+				<input id="base" type = "base"><br><br>
+				<button id = "computegrade" class="buttonclasscompg">Compute Grade</button>
+				<button id="clear2" class="buttonclasscompg">Clear Values</button><br><br>
+				
+		</div>		
+		<div id="outputgcomp">
+				<label for="grade" class="labelleft">Grade:</label>
+				<input id="grade" type = "number" readonly>
+				<label for="lettergrade"class="labelleft">Equivalent Grade:</label>
+				<input id="lettergrade" type = "text"readonly><br><br>
+		</div>
 
-<button id = "computegrade">Compute Grade</button><br><br>
+		
 
-<label for="grade">Grade:</label>
-<input id="grade" type = "number" readonly>
-<label for="lettergrade">Equivalent Grade:</label>
-<input id="lettergrade" type = "text"readonly><br><br>
-<button id="clear2">Clear Values</button><br><br>
-
-<h1 id = "comment"></h1>
+		<h1 id = "comment"></h1>
 
 
-<br><br>
-<a href = "index.html">Back to home page</a>
-<script>
+		<br><br>
+		<a href = "index.html"><button>Home Page</button></a>
+
+</div>
+<script type="text/javascript">
 
 document.getElementById("clear2").addEventListener("click", 
    ()=>{
@@ -45,7 +55,7 @@ items = document.getElementById("items").value*1;
 base = document.getElementById("base").value*1;
 
 grade= base + (score/items)*(100-base);
-document.getElementById("grade").value = grade;
+document.getElementById("grade").value = grade.toFixed(0);
 
 if (grade>=91 && grade<=100)lettergrade = 'A';
 else if (grade<91 && grade>=87)lettergrade = 'B+';
@@ -96,6 +106,7 @@ switch (lettergrade)
 
 
 });
+
 
 
 </script>

@@ -10,21 +10,31 @@
 </head> 
 
 <body> <h1>PAYROLL</h1> 
+
+	<div id="deleteModal" class="modal">
+		<div class="modal-content">
+		  <p>Are you sure you want to delete this record?</p>
+		  <button id="confirmDelete">Yes</button>
+		  <button id="cancelDelete">No</button>
+		</div>
+	  </div>
+
 <div id="maindiv">
 		<div id="inputbox">
-			<br><br><label for="nameInput">Employee Name:</label> 
+			<br><br>
+			<label for="nameInput" class="labelleft">Employee Name:</label> 
 			<input type="text" id="nameInput" placeholder="Enter employee name"> <br><br>
-			<label for="daysInput">Days Worked:</label>
-			<input type="number" id="daysInput" placeholder="Enter days worked"><br><br>
-			<label for="rateInput">Daily Rate:</label>
-			<input type="number" id="rateInput" placeholder="Enter daily rate"><br><br>
-			<label for="deductionInput">Deduction Amount:</label> 
-			<input type="number" id="deductionInput" placeholder="Enter deduction amount">  <br><br>
+			<label for="daysInput" class="labelleft">Days Worked:</label>
+			<input type="number" id="daysInput" class="alignright" placeholder="Enter days worked"><br><br>
+			<label for="rateInput" class="labelleft">Daily Rate:</label>
+			<input type="number" id="rateInput" class="alignright" placeholder="Enter daily rate"><br><br>
+			<label for="deductionInput" class="labelleft">Deduction Amount:</label> 
+			<input type="number" id="deductionInput" class="alignright" placeholder="Enter deduction amount">  <br><br>
 		</div>
 
 		<div id="buttonbox">
 			<button id="addData">Add</button> 
-			<a href="index.html"><button>Home Page</button></a><br><br><br>
+			<button id="cleardata">Clear Data</button><a href="index.html"><br><br><br><button>Home Page</button></a>
 		</div>	
 
 		<div id="tablediv">
@@ -32,21 +42,26 @@
 				<tr> 
 					<th>Number</th> 
 					<th>Name</th>
+					
 					<th>Days Worked</th> 
 					<th>Daily Rate</th> 
 					<th>Gross Pay</th>
 					<th>Deduction Amount</th> 
-					<th>Net Pay</th> 
+					<th>Net Pay</th>
+				
 					<th>Action</th> 
 				</tr> 
 			</table> 
 		</div>
+
 </div>
+
+
 	<script> 
 	let numberglobal=1;
 	document.getElementById("addData").addEventListener("click", 
    ()=>{
-		
+
 			// Get input values 
 			let name = document.getElementById("nameInput").value; 
 			let days = document.getElementById("daysInput").value*1; 
@@ -65,18 +80,15 @@
 			// Insert data into cells of the new row 
 			newRow.insertCell(0).innerHTML = number; 
 			newRow.insertCell(1).innerHTML = name; 
-			newRow.insertCell(2).innerHTML = days; 
-			newRow.insertCell(3).innerHTML = GrossP; 
-			newRow.insertCell(4).innerHTML = rate; 
-			newRow.insertCell(5).innerHTML = deduction; 
-			newRow.insertCell(6).innerHTML = NetP; 
-			newRow.insertCell(7).innerHTML = 
-				'<button onclick="editData(this)">Edit</button>'+ 
+			newRow.insertCell(2).innerHTML = days.toFixed(0); 
+			newRow.insertCell(3).innerHTML = GrossP.toFixed(2); 
+			newRow.insertCell(4).innerHTML = rate.toFixed(2); 
+			newRow.insertCell(5).innerHTML = deduction.toFixed(2); 
+			newRow.insertCell(6).innerHTML = NetP.toFixed(2); 
+			newRow.insertCell(7).innerHTML = '<button onclick="editData(this)">Edit</button>'+ 
 				'<button onclick="deleteData(this)">Delete</button>'; 
-			
-			// Clear input fields 
-			clearInputs(); 
 		});
+
 
 		function editData(button) { 
 			
@@ -126,23 +138,90 @@
 			mobileCell.innerHTML = numberInput; 
 			addressCell.innerHTML = addressInput; 
 		} 
-		function deleteData(button) { 
-			
-			// Get the parent row of the clicked button 
-			let row = button.parentNode.parentNode; 
 
-			// Remove the row from the table 
-			row.parentNode.removeChild(row); 
-			numberglobal--;
-		} 
-		function clearInputs() { 
+		function countRows() {
+			// Get the table element
+			let table = document.getElementById("outputTable");
+
+			// Get the number of rows in the table
+			let rowCount = table.rows.length;
+
+			return rowCount;
+		}
+
+
+		
+		
 			
-			// Clear input fields 
+
+		function countRows() {
+			// Get the table element
+			let table = document.getElementById("outputTable");
+
+			// Get the number of rows in the table
+			let rowCount = table.rows.length;
+
+			return rowCount;
+		}
+
+		
+
+		document.getElementById("cleardata").addEventListener("click", 
+   		()=>{
 			document.getElementById("nameInput").value = ""; 
 			document.getElementById("daysInput").value = ""; 
 			document.getElementById("rateInput").value = ""; 
 			document.getElementById("deductionInput").value = ""; 
-		} 
+		});
+
+		function updateNumberValues(table) {
+		// Iterate through rows starting from the first row after the deleted row
+		for (let i = table.rows.length - 1; i >= 1; i--) {
+			let currentRow = table.rows[i];
+			let numberCell = currentRow.cells[0]; // Assuming the number column is the first column
+
+			// Update the number value
+			numberCell.innerHTML = i;
+		}
+		}
+
+		function deleteData(button) {
+		// Get the parent row of the clicked button
+		let row = button.parentNode.parentNode;
+
+		// Display the modal
+		let modal = document.getElementById("deleteModal");
+		modal.style.display = "block";
+
+		// Handle confirmation
+		document.getElementById("confirmDelete").onclick = function () {
+			let row = button.parentNode.parentNode;
+
+			// Get the index of the row
+			let rowIndex = row.rowIndex;
+
+			// Get the table
+			let table = row.parentNode;
+
+			// Remove the entire row
+			table.deleteRow(rowIndex);
+
+			// Update the number values in the remaining rows
+			updateNumberValues(table);
+					
+
+			// Close the modal
+			modal.style.display = "none";
+			--numberglobal;
+		};
+
+		// Handle cancellation
+		document.getElementById("cancelDelete").onclick = function () {
+			// Close the modal without deleting
+			modal.style.display = "none";
+		};
+		}
+
 	</script> 
 </body> 
 

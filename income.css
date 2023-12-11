@@ -119,3 +119,7 @@ button:focus {
     box-shadow: 0 0 0 4px orchid;
     transition: 0.7s;
 }
+
+input{
+    border-radius: 30px;
+}
